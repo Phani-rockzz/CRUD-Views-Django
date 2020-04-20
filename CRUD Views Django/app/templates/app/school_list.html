@@ -1,0 +1,12 @@
+﻿<!DOCTYPE html>
+{% extends "app/base.html" %}
+
+{% block body_block %}
+<p><a class="btn btn-warning" href="{% url 'app:create' %}">create</a></p>
+<h1>welcome to list of schools</h1>
+<ol>
+    {% for school in schools %}
+    <li><a href="{{ school.id }}"><h2>{{ school.name }}</h2></a></li>
+    {% endfor %}
+</ol>
+{%  endblock %}
